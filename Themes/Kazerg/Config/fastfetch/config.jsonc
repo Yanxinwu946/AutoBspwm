@@ -1,0 +1,67 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  // ───────── Logo con imagen (ajusta ruta/tamaño si quieres) ─────────
+  "logo": {
+    "type": "auto",                        // o "kitty-direct", "sixel", "iterm", "chafa"
+    "source": "~/.config/fastfetch/logo.png",
+    "height": 18,
+    "padding": { "top": 1, "left": 2, "right": 4 },
+    "position": "left"
+  },
+
+  // ───────── Estilo global ─────────
+  "display": {
+    "separator": " ",
+    "key": { "width": 16 },
+    "color": {
+      "keys": "magenta",
+      "title": "cyan",
+      "output": "light_white",
+      "separator": "light_magenta"
+    }
+  },
+
+  "modules": [
+    // Identidad
+    { "type": "title", "key": "╭─(x_x)ﾉ", "keyColor": "magenta", "format": " {user-name}{#bold_white}@{host-name}{#}" },
+
+    // ╔══════════════════ SO ══════════════════╗
+    { "type": "custom", "format": "{#cyan}╭─[  SO  ]────────────────────────────────────────────{#}" },
+    { "type": "os",          "key": "│ 🖥️ OS",      "keyColor": "cyan" },
+    { "type": "kernel",      "key": "│ ⚙️ Kernel",  "keyColor": "cyan" },
+    { "type": "packages",    "key": "│ 📦 Paqs",    "keyColor": "cyan" },
+    { "type": "shell",       "key": "│ 💻 Shell",   "keyColor": "cyan" },
+    { "type": "uptime",      "key": "│ ⏳ Uptime",  "keyColor": "cyan" },
+    { "type": "custom", "format": "{#cyan}╰──────────────────────────────────────────────────────{#}" },
+
+    "break",
+
+    // ╔════════════════ Hardware ════════════════╗
+    { "type": "custom", "format": "{#magenta}╭─[  Hardware  ]──────────────────────────────────────{#}" },
+    { "type": "cpu",        "key": "│ 🔥 CPU",     "keyColor": "yellow", "format": " {name} @ {freq-max}" },
+    { "type": "gpu",        "key": "│ ✨ GPU",     "keyColor": "yellow" },
+    { "type": "memory",     "key": "│ 🧠 RAM",     "keyColor": "yellow" },
+    { "type": "disk",       "key": "│ 💾 Disco",   "keyColor": "yellow" },
+    { "type": "custom", "format": "{#magenta}╰──────────────────────────────────────────────────────{#}" },
+
+    "break",
+
+    // ╔══════════ Red & Seguridad (Ethical Hacking) ══════════╗
+    { "type": "custom", "format": "{#blue}╭─[  Red & Seguridad  ]────────────────────────────────{#}" },
+
+    { "type": "wifi",       "key": "│ 📶 Wi-Fi",       "keyColor": "blue",  "format": " {ssid}" },
+
+    { "type": "localip",    "key": "│ 🔌 IP local",   "keyColor": "blue",  "compact": true },
+
+    { "type": "command",    "key": "│ 🧭 Gateway",    "keyColor": "blue",
+      "text": "gw=\"$(ip route 2>/dev/null | awk '/default/ {print $3\" (\"$5\")\"; exit}')\"; [ -n \"$gw\" ] && echo \"$gw\" || echo 'n/a'" },
+
+    {"type": "publicip",   "key": "│ 🌍 IP pública",  "keyColor": "blue",  "timeout": 1200 },
+    
+    { "type": "command",    "key": "│ 🔁 IP forward", "keyColor": "blue",
+      "text": "val=\"$(sysctl -n net.ipv4.ip_forward 2>/dev/null || cat /proc/sys/net/ipv4/ip_forward 2>/dev/null)\"; [ \"$val\" = \"1\" ] && echo 'ON' || echo 'OFF'" },
+
+    { "type": "custom", "format": "{#blue}╰──────────────────────────────────────────────────────{#}" }
+  ]
+}
