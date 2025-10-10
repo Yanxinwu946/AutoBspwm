@@ -120,6 +120,7 @@ sudo ln -s -fv ~/.zshrc /root/.zshrc
 
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/bspwm/scripts/bspwm_resize
+chown "$(whoami)" ~/.config/bin/*
 chmod +x ~/.config/bin/ethernet_status.sh
 chmod +x ~/.config/bin/htb_status.sh
 chmod +x ~/.config/bin/htb_target.sh

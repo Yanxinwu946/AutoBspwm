@@ -2,19 +2,9 @@
 Fonts2/fonts/
 fonts/HNF
 
-#Wallpaper
-Wallpaper/
-
-#Kitty
-kitty/
-
 #Pics
 pics/
 
 #Rofi
 rofi/
 
-#Binaries and p10k
-.p10k.zsh
-.p10k.zsh-root
-lsd.deb
