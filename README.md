@@ -7,7 +7,7 @@ Este es un script de instalación de BSPWM para kali o parrot linux, cabe aclara
 
 Si necesitas más ayuda con esta instalación aquí tienes un video tutorial.
 
-TUTORIAL: [![TUTORIAL](linkdeimagen)](https://youtu.be/h2Au2ebTXJc?feature=shared)
+TUTORIAL: [![TUTORIAL]](https://youtu.be/h2Au2ebTXJc?feature=shared)
 
 1.- Uso del Script 
 
@@ -77,7 +77,7 @@ windows + d abre el buscador de aplicaciones
 windows hold mover libremente la ventana
 windows clic derecho reescalar libremente la ventana
 windows + alt + flechas escalar ventana
-windows + ctl + flechas mover ventana
+windows + ctrl + flechas mover ventana
 control + shift + t abre pestaña en terminal
 control shift alt t renombrar pestaña de terminal
 control shift w cerrar pestaña de terminal
@@ -95,6 +95,10 @@ Los dot files los puedes modificar en las siguientes rutas.
 
 ## [ZLCube theme]
 ![](https://github.com/ZLCube/AutoBspwm/blob/main/pics/Screenshot%202023-08-26%20151856.png)
+## [Zeneapp theme]
+![](https://github.com/ZLCube/AutoBspwm/blob/main/pics/Captura%20Pantalla%20Tema%20Zeneapp.png)
+## [Kazerg theme]
+![](https://github.com/ZLCube/AutoBspwm/blob/main/pics/Captura%20Pantalla%20Tema%20Kazerg.png)
 ## [Parrot theme]
 ![](https://github.com/ZLCube/AutoBspwm/blob/main/pics/Screenshot_2023-07-30_130115.png)
 ## [Cinnamoroll theme]
