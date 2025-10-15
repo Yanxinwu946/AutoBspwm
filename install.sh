@@ -22,9 +22,8 @@ sudo apt install -y meson picom libxext-dev libxcb1-dev libxcb-damage0-dev libxc
 
 # Instalamos paquetes adionales
 
-sudo apt install -y kitty feh scrot scrub rofi xclip bat locate ranger wmname acpi bspwm sxhkd imagemagick cmatrix zenity
+sudo apt install -y kitty feh scrot scrub rofi xclip bat locate ranger wmname acpi bspwm sxhkd imagemagick cmatrix zenity fastfetch
 
-    # neofetch (No funciona por ahora)
 
 # Creando carpeta de Reposistorios
 
@@ -103,6 +102,8 @@ sudo cp -v $ruta/.p10k.zsh-root /root/.p10k.zsh
 
 sudo cp -v $ruta/scripts/whichSystem.py /usr/local/bin/
 sudo cp -v $ruta/scripts/screenshot /usr/local/bin/
+sudo cp -v $ruta/scripts/settarget /usr/local/bin/
+sudo cp -v $ruta/scripts/kitty_start /usr/local/bin/
 
 # Plugins ZSH
 
@@ -119,12 +120,15 @@ sudo ln -s -fv ~/.zshrc /root/.zshrc
 
 chmod +x ~/.config/bspwm/bspwmrc
 chmod +x ~/.config/bspwm/scripts/bspwm_resize
+chown "$(whoami)" ~/.config/bin/*
 chmod +x ~/.config/bin/ethernet_status.sh
 chmod +x ~/.config/bin/htb_status.sh
 chmod +x ~/.config/bin/htb_target.sh
 chmod +x ~/.config/polybar/launch.sh
 sudo chmod +x /usr/local/bin/whichSystem.py
 sudo chmod +x /usr/local/bin/screenshot
+sudo chmod +x /usr/local/bin/settarget
+sudo chmod +x /usr/local/bin/kitty_start
 
 # Mensaje de Instalado
 

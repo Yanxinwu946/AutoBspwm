@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ruta=$(pwd)
+user=$(whoami)
 
 opciones()
 {
@@ -35,6 +36,7 @@ Pacman_theme()
     sudo cp -v $ruta/Themes/Pacman/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/Pacman/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "Pacman theme instalado"
@@ -68,6 +70,7 @@ Parrot_theme()
     sudo cp -v $ruta/Themes/Parrot/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/Parrot/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "Parrot theme instalado"
@@ -101,6 +104,7 @@ S4vi_theme()
     sudo cp -v $ruta/Themes/S4vi/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/S4vi/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "S4vi theme instalado"
@@ -135,6 +139,7 @@ Cinnamoroll_theme()
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/cin/config/* ~/.config/
 	sudo cp -rv $ruta/cin2.jpg ~/Wallpaper/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
  	#Install Font for cinnamoroll icons
 	mkdir ~/.fonts
@@ -175,6 +180,7 @@ Pink_theme()
     sudo cp -v $ruta/Themes/Pink/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/Pink/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "Pink theme instalado"
@@ -208,6 +214,7 @@ ZLCube_theme()
     sudo cp -v $ruta/Themes/ZLCube/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/ZLCube/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "ZLCube theme instalado"
@@ -244,14 +251,90 @@ Legion_theme()
     sudo cp -v $ruta/Themes/Legion/.p10k.zsh-root /root/.p10k.zsh
     echo "p10k setup"
 	sudo cp -rv $ruta/Themes/Legion/config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
 	echo "config setup"
     rofi-theme-selector
     echo "Legion theme instalado"
     kill -9 -1
 }
 
+Kazerg_theme()
+{
+	
+	#Damos permisos de ejecución 
+	sudo chmod +x $ruta/Themes/Kazerg/.p10k.zsh
+	sudo chmod +x $ruta/Themes/Kazerg/.p10k.zsh-root
+	sudo chmod +x $ruta/Themes/Kazerg/Config/bspwm/bspwmrc 
+    sudo chmod +x $ruta/Themes/Kazerg/Config/bspwm/scripts/bspwm_resize 
+    sudo chmod +x $ruta/Themes/Kazerg/Config/bin/ethernet_status.sh
+    sudo chmod +x $ruta/Themes/Kazerg/Config/bin/htb_status.sh 
+    sudo chmod +x $ruta/Themes/Kazerg/Config/bin/htb_target.sh 
+    sudo chmod +x $ruta/Themes/Kazerg/Config/polybar/launch.sh 
+    sudo chmod +x /usr/local/bin/whichSystem.py 
+    sudo chmod +x /usr/local/bin/screenshot
+    sudo chmod +x /usr/local/bin/settarget
+    sudo chmod +x /usr/local/bin/kitty_start 
+	#Limpiamos viejos dot files
+	sudo rm -rf	~/.p10k.zsh
+	sudo rm -rf	/root/.p10k.zsh
+	sudo rm -rf ~/.config/bspwm
+	sudo rm -rf ~/.config/bin
+	sudo rm -rf ~/.config/picom
+	sudo rm -rf ~/.config/polybar
+	sudo rm -rf ~/.config/rofi
+	sudo rm -rf ~/.config/Wallpaper
+	#Movemos los dot files
+    sudo cp -v $ruta/Themes/Kazerg/.p10k.zsh ~/.p10k.zsh
+    sudo cp -v $ruta/Themes/Kazerg/.p10k.zsh-root /root/.p10k.zsh
+    echo "p10k setup"
+	sudo cp -rv $ruta/Themes/Kazerg/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
+	echo "config setup"
+    rofi-theme-selector
+    echo "Kazerg theme instalado"
+    kill -9 -1
+}
 
-selected_option=$(opciones "Pacman" "Parrot" "S4vi" "Cinnamoroll" "Pink" "ZLCube" "Legion")
+
+Zeneapp_theme()
+{
+	
+	#Damos permisos de ejecución 
+	sudo chmod +x $ruta/Themes/Zeneapp/.p10k.zsh
+	sudo chmod +x $ruta/Themes/Zeneapp/.p10k.zsh-root
+	sudo chmod +x $ruta/Themes/Zeneapp/Config/bspwm/bspwmrc 
+    sudo chmod +x $ruta/Themes/Zeneapp/Config/bspwm/scripts/bspwm_resize 
+    sudo chmod +x $ruta/Themes/Zeneapp/Config/bin/ethernet_status.sh
+    sudo chmod +x $ruta/Themes/Zeneapp/Config/bin/htb_status.sh 
+    sudo chmod +x $ruta/Themes/Zeneapp/Config/bin/htb_target.sh 
+    sudo chmod +x $ruta/Themes/Zeneapp/Config/polybar/launch.sh 
+    sudo chmod +x /usr/local/bin/whichSystem.py 
+    sudo chmod +x /usr/local/bin/screenshot
+    sudo chmod +x /usr/local/bin/settarget
+    sudo chmod +x /usr/local/bin/kitty_start 
+	#Limpiamos viejos dot files
+	sudo rm -rf	~/.p10k.zsh
+	sudo rm -rf	/root/.p10k.zsh
+	sudo rm -rf ~/.config/bspwm
+	sudo rm -rf ~/.config/bin
+	sudo rm -rf ~/.config/picom
+	sudo rm -rf ~/.config/polybar
+	sudo rm -rf ~/.config/rofi
+	sudo rm -rf ~/.config/Wallpaper
+	#Movemos los dot files
+    sudo cp -v $ruta/Themes/Zeneapp/.p10k.zsh ~/.p10k.zsh
+    sudo cp -v $ruta/Themes/Zeneapp/.p10k.zsh-root /root/.p10k.zsh
+    echo "p10k setup"
+	sudo cp -rv $ruta/Themes/Zeneapp/Config/* ~/.config/
+	sudo chown $user:$user ~/.config/bin/* 
+	echo "config setup"
+    rofi-theme-selector
+    sudo 
+    echo "Zeneapp theme instalado"
+    kill -9 -1
+}
+
+selected_option=$(opciones "Pacman" "Parrot" "S4vi" "Cinnamoroll" "Pink" "ZLCube" "Legion" "Kazerg" "Zeneapp")
 
 
 case "$selected_option" in
@@ -277,6 +360,15 @@ case "$selected_option" in
     "ZLCube")
         ZLCube_theme
         ;;
+
+    "Kazerg")
+	Kazerg_theme
+	;;
+    
+    "Zeneapp")
+	Zeneapp_theme
+	;;
+
 
     *)
         echo "Selección inválida."
